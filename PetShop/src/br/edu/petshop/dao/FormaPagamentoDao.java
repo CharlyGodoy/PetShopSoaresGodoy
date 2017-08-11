@@ -7,7 +7,7 @@ import javax.persistence.Query;
 
 import br.edu.petshop.entity.FormaPagamento;
 
-public class FormaPagamentoDao {
+ class FormaPagamentoDao implements InterfaceDao<FormaPagamento>{
 
 	public void salvar(FormaPagamento formaPagamento) {
 		EntityManager em = Conexao.getInstance().createEntityManager();

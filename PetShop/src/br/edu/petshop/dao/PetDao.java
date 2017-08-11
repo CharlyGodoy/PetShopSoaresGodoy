@@ -5,9 +5,10 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import br.edu.petshop.entity.ItemServico;
 import br.edu.petshop.entity.Pet;
 
-public class PetDao {
+public class PetDao implements InterfaceDao<Pet>{
 
 	public void salvar(Pet pet) {
 		EntityManager em = Conexao.getInstance().createEntityManager();

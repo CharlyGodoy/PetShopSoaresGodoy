@@ -5,9 +5,10 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import br.edu.petshop.entity.ItemServico;
 import br.edu.petshop.entity.Produto;
 
-public class ProdutoDao {
+public class ProdutoDao implements InterfaceDao<Produto>{
 
 	public void salvar(Produto produto) {
 		EntityManager em = Conexao.getInstance().createEntityManager();
