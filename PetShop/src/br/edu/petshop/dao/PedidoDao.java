@@ -32,4 +32,16 @@ public class PedidoDao implements InterfaceDao<Pedido>{
 		
 		return pedidos;
 	}
+
+	@Override
+	public void Editar(Pedido t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Excluir(Pedido t) {
+		// TODO Auto-generated method stub
+		
+	}
 }
