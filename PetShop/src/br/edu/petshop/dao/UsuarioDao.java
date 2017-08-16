@@ -32,4 +32,16 @@ public class UsuarioDao implements InterfaceDao<Usuario>{
 		
 		return usuarios;
 	}
+
+	@Override
+	public void Editar(Usuario t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Excluir(Usuario t) {
+		// TODO Auto-generated method stub
+		
+	}
 }

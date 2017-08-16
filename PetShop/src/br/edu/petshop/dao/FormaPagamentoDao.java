@@ -31,4 +31,16 @@ import br.edu.petshop.entity.FormaPagamento;
 		
 		return formasPagamento;
 	}
+
+	@Override
+	public void Editar(FormaPagamento t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Excluir(FormaPagamento t) {
+		// TODO Auto-generated method stub
+		
+	}
 }

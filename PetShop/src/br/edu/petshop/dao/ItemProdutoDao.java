@@ -32,4 +32,16 @@ public class ItemProdutoDao implements InterfaceDao<ItemProduto>{
 		
 		return itemProdutos;
 	}
+
+	@Override
+	public void Editar(ItemProduto t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Excluir(ItemProduto t) {
+		// TODO Auto-generated method stub
+		
+	}
 }

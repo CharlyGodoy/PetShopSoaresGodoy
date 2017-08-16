@@ -32,4 +32,16 @@ public class ServicoDao implements InterfaceDao<Servico>{
 		
 		return servicos;
 	}
+
+	@Override
+	public void Editar(Servico t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Excluir(Servico t) {
+		// TODO Auto-generated method stub
+		
+	}
 }
