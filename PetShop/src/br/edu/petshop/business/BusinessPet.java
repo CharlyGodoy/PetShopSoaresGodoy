@@ -1,9 +1,5 @@
 package br.edu.petshop.business;
 
-import java.util.Date;
-
-import org.hibernate.hql.ast.tree.BooleanLiteralNode;
-
 import br.edu.petshop.dao.FactoryDao;
 import br.edu.petshop.dao.InterfaceDao;
 import br.edu.petshop.entity.Pet;
@@ -43,7 +39,7 @@ public class BusinessPet {
 			BusinessException("Usuario inválido.");
 		}
 		
-		InterfaceDao<Usuario> usuarioDao = FactoryDao.createUsuario();
+		InterfaceDao<Usuario> usuarioDao = FactoryDao.createUsuarioDao();
 		Boolean existe = false;
 		
 		for (Usuario item : usuarioDao.listar()) {
@@ -59,7 +55,7 @@ public class BusinessPet {
 			BusinessException("Usuario não cadastrado.");
 		}
 		
-		InterfaceDao<Pet> petDao = FactoryDao.createPet();
+		InterfaceDao<Pet> petDao = FactoryDao.createPetDao();
 		petDao.salvar(pet);
 	}
 }
