@@ -11,35 +11,35 @@ import br.edu.petshop.entity.Usuario;
 
 public class FactoryDao {
 
-	public static InterfaceDao<FormaPagamento> createFormaPagamento() {
+	public static InterfaceDao<FormaPagamento> createFormaPagamentoDao() {
 		return new FormaPagamentoDao();
 	}
 	
-	public static InterfaceDao<ItemProduto> createItemProduto() {
+	public static InterfaceDao<ItemProduto> createItemProdutoDao() {
 		return new ItemProdutoDao();
 	}
 	
-	public static InterfaceDao<ItemServico> createItemServico() {
+	public static InterfaceDao<ItemServico> createItemServicoDao() {
 		return new ItemServicoDao();
 	}
 	
-	public static InterfaceDao<Pedido> createPedido() {
+	public static InterfaceDao<Pedido> createPedidoDao() {
 		return new PedidoDao();
 	}
 	
-	public static InterfaceDao<Pet> createPet() {
+	public static InterfaceDao<Pet> createPetDao() {
 		return new PetDao();
 	}
 	
-	public static InterfaceDao<Produto> createProduto() {
+	public static InterfaceDao<Produto> createProdutoDao() {
 		return new ProdutoDao();
 	}
 	
-	public static InterfaceDao<Servico> createServico() {
+	public static InterfaceDao<Servico> createServicoDao() {
 		return new ServicoDao();
 	}
 	
-	public static InterfaceDao<Usuario> createUsuario() {
+	public static InterfaceDao<Usuario> createUsuarioDao() {
 		return new UsuarioDao();
 	}
 }
