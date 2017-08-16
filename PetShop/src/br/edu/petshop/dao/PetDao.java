@@ -41,6 +41,12 @@ public class PetDao implements InterfaceDao<Pet>{
 
 	@Override
 	public void Excluir(Pet pet) {
-
+		EntityManager em = Conexao.getInstance().createEntityManager();
+		
+		em.getTransaction().begin();
+		em.remove(pet);
+		em.getTransaction().commit();
+		
+		em.close();
 	}
 }

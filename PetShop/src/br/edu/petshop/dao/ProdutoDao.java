@@ -40,8 +40,14 @@ public class ProdutoDao implements InterfaceDao<Produto>{
 	}
 
 	@Override
-	public void Excluir(Produto t) {
-		// TODO Auto-generated method stub
+	public void Excluir(Produto produto) {
+		EntityManager em = Conexao.getInstance().createEntityManager();
+		
+		em.getTransaction().begin();
+		em.remove(produto);
+		em.getTransaction().commit();
+		
+		em.close();
 		
 	}
 }

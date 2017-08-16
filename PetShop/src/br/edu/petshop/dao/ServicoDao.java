@@ -40,8 +40,14 @@ public class ServicoDao implements InterfaceDao<Servico>{
 	}
 
 	@Override
-	public void Excluir(Servico t) {
-		// TODO Auto-generated method stub
+	public void Excluir(Servico servico) {
+		EntityManager em = Conexao.getInstance().createEntityManager();
+		
+		em.getTransaction().begin();
+		em.remove(servico);
+		em.getTransaction().commit();
+		
+		em.close();
 		
 	}
 }

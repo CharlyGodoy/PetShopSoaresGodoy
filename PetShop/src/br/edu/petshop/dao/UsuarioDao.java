@@ -40,8 +40,14 @@ public class UsuarioDao implements InterfaceDao<Usuario>{
 	}
 
 	@Override
-	public void Excluir(Usuario t) {
-		// TODO Auto-generated method stub
+	public void Excluir(Usuario usuario) {
+		EntityManager em = Conexao.getInstance().createEntityManager();
+		
+		em.getTransaction().begin();
+		em.remove(usuario);
+		em.getTransaction().commit();
+		
+		em.close();
 		
 	}
 }

@@ -40,8 +40,14 @@ public class PedidoDao implements InterfaceDao<Pedido>{
 	}
 
 	@Override
-	public void Excluir(Pedido t) {
-		// TODO Auto-generated method stub
+	public void Excluir(Pedido pedido) {
+		EntityManager em = Conexao.getInstance().createEntityManager();
+		
+		em.getTransaction().begin();
+		em.remove(pedido);
+		em.getTransaction().commit();
+		
+		em.close();
 		
 	}
 }
