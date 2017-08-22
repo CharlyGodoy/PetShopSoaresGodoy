@@ -1,5 +1,7 @@
 package br.edu.petshop.business;
 
+import java.util.List;
+
 import br.edu.petshop.dao.FactoryDao;
 import br.edu.petshop.dao.InterfaceDao;
 import br.edu.petshop.entity.Pet;
@@ -8,6 +10,7 @@ import br.edu.petshop.entity.Usuario;
 public class BusinessPet {
 
 	public void salvar (Pet pet) throws BusinessException{
+
 		if (pet.getNome() == null || pet.getNome().equals("") )
 		{
 			throw new
@@ -57,5 +60,14 @@ public class BusinessPet {
 		
 		InterfaceDao<Pet> petDao = FactoryDao.createPetDao();
 		petDao.salvar(pet);
+	}
+
+	public List<Pet> listar(){
+		
+		InterfaceDao<Pet> petDao = FactoryDao.createPetDao();
+		
+		List<Pet> pets = petDao.listar();
+		
+		return pets;
 	}
 }

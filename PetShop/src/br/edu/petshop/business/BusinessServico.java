@@ -1,5 +1,7 @@
 package br.edu.petshop.business;
 
+import java.util.List;
+
 import br.edu.petshop.dao.FactoryDao;
 import br.edu.petshop.dao.InterfaceDao;
 import br.edu.petshop.entity.Servico;
@@ -30,5 +32,14 @@ public class BusinessServico {
 		
 		InterfaceDao<Servico> servicoDao = FactoryDao.createServicoDao();
 		servicoDao.salvar(servico);
+	}
+
+	public List<Servico> listar(){
+
+		InterfaceDao<Servico> servicoDao = FactoryDao.createServicoDao();
+		
+		List<Servico> servicos = servicoDao.listar();
+		
+		return servicos;
 	}
 }

@@ -11,17 +11,13 @@ import br.edu.petshop.business.BusinessException;
 import br.edu.petshop.business.BusinessServico;
 import br.edu.petshop.dao.FactoryDao;
 import br.edu.petshop.dao.InterfaceDao;
-import br.edu.petshop.entity.Pet;
 import br.edu.petshop.entity.Servico;
+import br.edu.petshop.facade.Facade;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestarServico {
 	
-	private Long servicoId;
-	private String nome;
-	private String descricao;
-	private String tempoServico;
-	private Double valorServico;
+	Facade facade = new Facade();
 	
 	@Test
 	public void cadastrarServico() {
@@ -36,7 +32,7 @@ public class TestarServico {
 		BusinessServico businessServico = new BusinessServico();
 		
 		try{
-			businessServico.salvar(servico);
+			facade.cadastrarServico(servico);
 		}catch (BusinessException e){
 			e.printStackTrace();
 		}
@@ -49,9 +45,7 @@ public class TestarServico {
 	@Test
 	public void listarServicos() {
 		
-		InterfaceDao<Servico> servicoDao = FactoryDao.createServicoDao();
-		
-		List<Servico> servicos = servicoDao.listar();
+		List<Servico> servicos = facade.listarServico();
 		
 		Assert.assertEquals(true, servicos.size() > 0);
 		
