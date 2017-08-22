@@ -22,6 +22,8 @@ public class Facade {
 	public Facade(){
 		businessUsuario = new BusinessUsuario();
 		businessPet = new BusinessPet();
+		businessProduto = new BusinessProduto();
+		businessServico = new BusinessServico();
 	}
 	
 	public void cadastrarPet(Pet pet) throws BusinessException{
@@ -36,8 +38,16 @@ public class Facade {
 		businessUsuario.salvar(usuario);
 	}
 	
+	public List<Usuario> listarUsuario() {
+		return businessUsuario.listar();
+	}
+	
 	public void cadastrarProduto (Produto produto) throws BusinessException{
 		businessProduto.salvar(produto);
+	}
+	
+	public List<Produto> listarProduto() {
+		return businessProduto.listar();
 	}
 	
 	public void cadastrarServico(Servico servico) throws BusinessException{

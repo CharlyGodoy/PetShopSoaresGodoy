@@ -1,5 +1,7 @@
 package br.edu.petshop.business;
 
+import java.util.List;
+
 import br.edu.petshop.dao.FactoryDao;
 import br.edu.petshop.dao.InterfaceDao;
 import br.edu.petshop.entity.Usuario;
@@ -59,5 +61,14 @@ public class BusinessUsuario {
 		
 		InterfaceDao<Usuario> usuarioDao = FactoryDao.createUsuarioDao();//new UsuarioDao();
 		usuarioDao.salvar(usuario);		
+	}
+
+	public List<Usuario> listar(){
+		
+		InterfaceDao<Usuario> usuarioDao = FactoryDao.createUsuarioDao();
+		
+		List<Usuario> usuarios = usuarioDao.listar();
+		
+		return usuarios;
 	}
 }

@@ -9,8 +9,6 @@ import org.junit.runners.MethodSorters;
 
 import br.edu.petshop.business.BusinessException;
 import br.edu.petshop.business.BusinessServico;
-import br.edu.petshop.dao.FactoryDao;
-import br.edu.petshop.dao.InterfaceDao;
 import br.edu.petshop.entity.Servico;
 import br.edu.petshop.facade.Facade;
 
@@ -28,18 +26,14 @@ public class TestarServico {
 		servico.setDescricao("Escovar os dentes do pet com Colgate Luminous White");
 		servico.setTempoServico("15 Minutos");
 		servico.setValorServico(10.50);
-		
-		BusinessServico businessServico = new BusinessServico();
-		
+				
 		try{
 			facade.cadastrarServico(servico);
 		}catch (BusinessException e){
 			e.printStackTrace();
 		}
-		
-		
-		Assert.assertEquals(true, servico.getServicoId() != null);
-		
+				
+		Assert.assertEquals(true, servico.getServicoId() != null);		
 	}
 	
 	@Test
