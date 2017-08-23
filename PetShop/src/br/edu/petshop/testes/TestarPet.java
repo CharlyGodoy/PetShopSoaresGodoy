@@ -9,8 +9,6 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import br.edu.petshop.business.BusinessException;
-import br.edu.petshop.dao.FactoryDao;
-import br.edu.petshop.dao.InterfaceDao;
 import br.edu.petshop.entity.Pet;
 import br.edu.petshop.entity.Usuario;
 import br.edu.petshop.facade.Facade;

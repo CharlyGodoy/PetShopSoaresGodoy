@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -17,9 +18,17 @@ public class Pedido {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long pedidoIdId;
 	private Date dataPedido;
+	
+	@Transient
 	private FormaPagamento formaPagamento;
+	
+	@Transient
 	private Usuario usuario;
+	
+	@Transient
 	private List<ItemProduto> itensProduto;
+	
+	@Transient
 	private List<ItemServico> itensServico;
 	
 	public Long getPedidoIdId() {

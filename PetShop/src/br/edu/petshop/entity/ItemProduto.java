@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -14,7 +15,10 @@ public class ItemProduto {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long itemProdutoId;
 	private Long quantidadeProduto;
+	
+	@Transient
 	private Produto produto;
+	
 	public Long getItemProdutoId() {
 		return itemProdutoId;
 	}
