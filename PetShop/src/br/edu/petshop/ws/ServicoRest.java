@@ -10,19 +10,19 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.petshop.business.BusinessException;
-import br.edu.petshop.entity.Pet;
+import br.edu.petshop.entity.Servico;
 import br.edu.petshop.facade.Facade;
 
-@Path("/petrest")
-public class PetRest {
+@Path("/servicorest")
+public class ServicoRest {
 
 	Facade facade = new Facade();
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void salvar(Pet pet){
+	public void salvar(Servico servico){
 		try{
-			facade.cadastrarPet(pet);
+			facade.cadastrarServico(servico);
 		}catch(BusinessException e){
 			e.printStackTrace();
 		}
@@ -31,8 +31,8 @@ public class PetRest {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public ArrayList<Pet> listar(){
+	public ArrayList<Servico> listar(){
 		
-		return (ArrayList<Pet>) facade.listarPet();
+		return (ArrayList<Servico>) facade.listarServico();
 	}
 }

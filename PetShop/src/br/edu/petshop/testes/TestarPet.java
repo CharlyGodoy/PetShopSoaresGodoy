@@ -20,7 +20,7 @@ public class TestarPet {
 	
 	public Usuario usuarioTeste() {
 		Usuario usuario = new Usuario();
-		usuario.setCpf("123"); 
+		usuario.setCpf("10301175698"); 
 		return usuario;
 	}
 	
