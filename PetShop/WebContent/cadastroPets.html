@@ -16,9 +16,12 @@
 <link href="css/bootstrap.min.css"
 	rel="stylesheet">
 
+
 <!-- Custom styles for this template -->
 <link href="css/starter-template.css"
 	rel="stylesheet">
+	
+
 </head>
 
 <body>
@@ -36,14 +39,17 @@
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link"
-					href="http://getbootstrap.com/docs/4.0/examples/starter-template/#">Cadastro
+					href="cadastroPets.html">Cadastro
 						de Pets <span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="http://getbootstrap.com/docs/4.0/examples/starter-template/#">Cadastro de Produtos</a>
+					href="cadastroUsuario.html">Cadastro de Usuario</a>
 				</li>
-				<li class="nav-item"><a class="nav-link disabled"
-					href="http://getbootstrap.com/docs/4.0/examples/starter-template/#">Disabled</a>
+				<li class="nav-item"><a class="nav-link"
+					href="cadastroProduto.html">Cadastro de Produtos</a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					href="cadastroServico.html">Cadastro de Serviço</a>
 				</li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="http://example.com/"
@@ -81,10 +87,30 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="matricula" class="col-sm-2 control-label">Matricula</label>
+				<label for="tipo" class="col-sm-2 control-label">Tipo</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="matricula"
-						placeholder="Matricula">
+					<input type="text" class="form-control" id="tipo"
+						placeholder="Tipo">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="raca" class="col-sm-2 control-label">Raça</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="raca"
+						placeholder="Raça">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="peso" class="col-sm-2 control-label">Peso</label>
+				<div class="col-sm-10">
+					<input type="number" class="form-control" id="peso"
+						placeholder="Peso">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="dataNascimento" class="col-sm-2 control-label">Data de Nascimento</label>
+				<div class="col-sm-10">
+					<input type="date" class="form-control" id="dataNascimento">
 				</div>
 			</div>
 			<div class="form-group">
@@ -96,18 +122,30 @@
 			<table class="table table-striped">
   				<tr>
   					<th>Nome</th>
-  					<th>Matricula</th>
+  					<th>Tipo</th>
+  					<th>Raça</th>
+  					<th>Peso</th>
+  					<th>Data de Nascimento</th>
   				</tr>
   				<tr>
   					<td>Abc</td>
+  					<td>123</td>
+  					<td>Abc</td>
+  					<td>123</td>
   					<td>123</td>
   				</tr>
   				<tr>
   					<td>Abc</td>
   					<td>123</td>
+  					<td>Abc</td>
+  					<td>123</td>
+  					<td>123</td>
   				</tr>
   				<tr>
   					<td>Abc</td>
+  					<td>123</td>
+  					<td>Abc</td>
+  					<td>123</td>
   					<td>123</td>
   				</tr>
 			</table>
@@ -130,7 +168,7 @@
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script
 		src="js/ie10-viewport-bug-workaround.js.download"></script>
-
+   
 
 </body>
 </html>
