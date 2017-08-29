@@ -10,7 +10,7 @@
 <meta name="author" content="">
 <link rel="icon" href="http://getbootstrap.com/favicon.ico">
 
-<title>Cadastro de Pets</title>
+<title>Cadastro de Produtos</title>
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css"
@@ -25,7 +25,7 @@
 
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 		<a class="navbar-brand"
-			href="http://getbootstrap.com/docs/4.0/examples/starter-template/#">Petshop</a>
+			href="template.html">Petshop</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarsExampleDefault"
 			aria-controls="navbarsExampleDefault" aria-expanded="false"
@@ -36,14 +36,17 @@
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link"
-					href="http://getbootstrap.com/docs/4.0/examples/starter-template/#">Cadastro
+					href="cadastroPets.html">Cadastro
 						de Pets <span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="http://getbootstrap.com/docs/4.0/examples/starter-template/#">Cadastro de Produtos</a>
+					href="cadastroUsuario.html">Cadastro de Usuario</a>
 				</li>
-				<li class="nav-item"><a class="nav-link disabled"
-					href="http://getbootstrap.com/docs/4.0/examples/starter-template/#">Disabled</a>
+				<li class="nav-item"><a class="nav-link"
+					href="cadastroProduto.html">Cadastro de Produtos</a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					href="cadastroServico.html">Cadastro de Serviço</a>
 				</li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="http://example.com/"
@@ -51,11 +54,11 @@
 					aria-expanded="false">Dropdown</a>
 					<div class="dropdown-menu" aria-labelledby="dropdown01">
 						<a class="dropdown-item"
-							href="http://getbootstrap.com/docs/4.0/examples/starter-template/#">Action</a>
+							href="#">Action</a>
 						<a class="dropdown-item"
-							href="http://getbootstrap.com/docs/4.0/examples/starter-template/#">Another
+							href="#">Another
 							action</a> <a class="dropdown-item"
-							href="http://getbootstrap.com/docs/4.0/examples/starter-template/#">Something
+							href="#">Something
 							else here</a>
 					</div></li>
 			</ul>
@@ -69,7 +72,7 @@
 
 	<div class="container">
 		<div class="page-header">
-			<h1>Cadastro de Pets</h1>
+			<h1>Cadastro de Produtos</h1>
 		</div>
 
 		<form class="form-horizontal">
@@ -81,32 +84,54 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="matricula" class="col-sm-2 control-label">Matricula</label>
+				<label for="matricula" class="col-sm-2 control-label">Descrição</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="matricula"
-						placeholder="Matricula">
+					<input type="text" class="form-control" id="descricao"
+						placeholder="Descrição">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="matricula" class="col-sm-2 control-label">Estoque de Produtos</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="estoqueProduto"
+						placeholder="Estoque de Produtos">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="matricula" class="col-sm-2 control-label">Valor do Produto</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="valorProduto"
+						placeholder="Valor do Produto">
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default">Cadastrar</button>
+					<button type="submit" class="btn btn-success">Cadastrar</button>
 				</div>
 			</div>
 			
 			<table class="table table-striped">
   				<tr>
   					<th>Nome</th>
-  					<th>Matricula</th>
+  					<th>Descrição</th>
+  					<th>Estoque do Produto</th>
+  					<th>Valor do Produto</th>
   				</tr>
   				<tr>
+  					<td>Abc</td>
+  					<td>123</td>
   					<td>Abc</td>
   					<td>123</td>
   				</tr>
   				<tr>
   					<td>Abc</td>
   					<td>123</td>
+  					<td>Abc</td>
+  					<td>123</td>
   				</tr>
   				<tr>
+  					<td>Abc</td>
+  					<td>123</td>
   					<td>Abc</td>
   					<td>123</td>
   				</tr>
