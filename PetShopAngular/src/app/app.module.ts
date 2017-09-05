@@ -21,7 +21,7 @@ import { HttpUsuarioComponent } from './http_usuario.component';
     HttpModule,
     RouterModule.forRoot([
   {
-    path: 'cliente',
+    path: 'cadastrarUsuario',
     component: HttpUsuarioComponent
   }
 ])
