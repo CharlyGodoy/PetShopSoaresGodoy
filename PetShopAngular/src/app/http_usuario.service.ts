@@ -11,7 +11,7 @@ export class HttpUsuarioService {
   constructor(private _http: Http) { }
 
   getUsuario(): Observable<Usuario[]> {
-    return this._http.get('http://aulaas.jelasticlw.com.br/sistemadevendas/rest/clienterest').
+    return this._http.get('http://localhost:8081/PetShop/rest/usuariorest').
       map(this.extractData);
   }
 
@@ -23,7 +23,7 @@ export class HttpUsuarioService {
     const json = JSON.stringify(usuario);
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
-    return this._http.post('http://aulaas.jelasticlw.com.br/sistemadevendas/rest/clienterest',
+    return this._http.post('http://localhost:8081/PetShop/rest/usuariorest',
       json, options).map(res => res.json());
   }
 }

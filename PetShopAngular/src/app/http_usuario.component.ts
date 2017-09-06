@@ -24,7 +24,7 @@ export class HttpUsuarioComponent {
     );
   }
 
-  addCliente() {
+  addUsuario() {
     this.httpUsuarioS.addUsuario(this.usuario).subscribe(
       data => data,
       error => alert(error),
