@@ -31,10 +31,27 @@
 		<button class="btn btn-success" (click)="addUsuario()">Cadastrar</button>
 	</form>
 
-	<ul>
-		<li *ngFor="let usuario of usuarios">{{usuario.nome}} - {{usuario.endereco}} - 
-		{{usuario.telefone}} - {{usuario.login}} - {{usuario.senha}} - {{usuario.tipoUsuario}}</li>
-	</ul>
+<br/>
+<br/>
+<br/>
+	<p></p>
+	<table class="table">
+		<tr>
+			<th>Nome</th>
+			<th>Matricula</th>
+		</tr>
+		<tr *ngFor="let usuario of usuarios">
+			<td>{{usuario.nome}} </td>
+			<td>{{usuario.endereco}}</td>
+			<td>{{usuario.telefone}}</td>
+			<td>{{usuario.login}}</td>
+			<td>{{usuario.senha}}</td>
+			<td>{{usuario.cpf}}</td>
+			<td>{{usuario.tipoUsuario}}</td>
+			
+		</tr>
+	</table>
+	
 </div>
 
 
