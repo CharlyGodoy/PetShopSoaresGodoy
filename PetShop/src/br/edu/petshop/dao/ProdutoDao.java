@@ -21,6 +21,7 @@ public class ProdutoDao implements InterfaceDao<Produto>{
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Produto> listar() {
 		EntityManager em = Conexao.getInstance().createEntityManager();
 		

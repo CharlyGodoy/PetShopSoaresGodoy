@@ -21,6 +21,7 @@ public class ItemServicoDao implements InterfaceDao<ItemServico>{
 
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<ItemServico> listar() {
 		EntityManager em = Conexao.getInstance().createEntityManager();
 

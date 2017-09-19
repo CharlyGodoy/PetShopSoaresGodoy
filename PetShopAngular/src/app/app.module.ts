@@ -6,14 +6,16 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HttpUsuarioComponent } from './http_usuario.component';
+import { HttpUsuarioComponent } from './usuario/http_usuario.component';
+import { HttpPetComponent } from './pet/http_pet.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HttpUsuarioComponent
+    HttpUsuarioComponent,
+    HttpPetComponent
   ],
   imports: [
     BrowserModule,
@@ -23,10 +25,14 @@ import { HttpUsuarioComponent } from './http_usuario.component';
   {
     path: 'cadastrarUsuario',
     component: HttpUsuarioComponent
+  },
+  {
+    path: 'cadastrarPet',
+    component: HttpPetComponent
   }
 ])
   ],
-  providers: [HttpUsuarioComponent],
+  providers: [HttpUsuarioComponent, HttpPetComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

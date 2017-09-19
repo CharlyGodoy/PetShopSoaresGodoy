@@ -20,6 +20,7 @@ import br.edu.petshop.entity.FormaPagamento;
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<FormaPagamento> listar() {
 		EntityManager em = Conexao.getInstance().createEntityManager();
 		

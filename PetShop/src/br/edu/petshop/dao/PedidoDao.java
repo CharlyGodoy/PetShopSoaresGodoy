@@ -21,6 +21,7 @@ public class PedidoDao implements InterfaceDao<Pedido>{
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Pedido> listar() {
 		EntityManager em = Conexao.getInstance().createEntityManager();
 		

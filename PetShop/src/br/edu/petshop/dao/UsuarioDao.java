@@ -21,6 +21,7 @@ public class UsuarioDao implements InterfaceDao<Usuario>{
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Usuario> listar() {
 		EntityManager em = Conexao.getInstance().createEntityManager();
 		
