@@ -26,4 +26,12 @@ export class HttpUsuarioService {
     return this._http.post('http://petshop.jelasticlw.com.br/rest/usuariorest',
       json, options).map(res => res.json());
   }
+
+  deleteUsuario(usuario: Usuario): Observable<string> {
+    const json = JSON.stringify(usuario);
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
+    return this._http.post('http://petshop.jelasticlw.com.br/rest/usuariorest/excluir?id=' + usuario.id,
+      json, options).map(res => res.json());
+  }
 }

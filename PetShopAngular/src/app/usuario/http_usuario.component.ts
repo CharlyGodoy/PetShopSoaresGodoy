@@ -30,9 +30,24 @@ export class HttpUsuarioComponent {
       error => alert(error),
       () => this.getUsuario()
     );
-
-
   }
 
+  editUsuario(usuario: Usuario) {
+    this.usuario.id = usuario.id;
+    this.usuario.nome = usuario.nome;
+    this.usuario.endereco = usuario.endereco;
+    this.usuario.telefone = usuario.telefone;
+    this.usuario.login = usuario.login;
+    this.usuario.senha = usuario.senha;
+    this.usuario.cpf = usuario.cpf;
+    this.usuario.tipoUsuario = usuario.tipoUsuario;
+  }
 
+  deleteUsuario() {
+    this.httpUsuarioS.deleteUsuario(this.usuario).subscribe(
+      data => data,
+      error => alert(error),
+      () => this.getUsuario()
+    );
+  }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 export class Usuario {
+  public id: number;
   public nome: string;
   public endereco: string;
   public telefone: string;

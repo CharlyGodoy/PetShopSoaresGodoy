@@ -37,6 +37,7 @@
 	<p></p>
 	<table class="table">
 		<tr>
+			<th>ID</th>
 			<th>Nome</th>
 			<th>Matricula</th>
 			<th>Endereço</th>
@@ -46,15 +47,17 @@
 			<th>CPF</th>
 			<th>Tipo de Usuário</th>
 		</tr>
-		<tr *ngFor="let usuario of usuarios">
-			<td>{{usuario.nome}} </td>
-			<td>{{usuario.endereco}}</td>
-			<td>{{usuario.telefone}}</td>
-			<td>{{usuario.login}}</td>
-			<td>{{usuario.senha}}</td>
-			<td>{{usuario.cpf}}</td>
-			<td>{{usuario.tipoUsuario}}</td>
-			
+		<tr *ngFor="let u of usuarios">
+			<td>{{u.id}}</td>
+			<td>{{u.nome}}</td>
+			<td>{{u.endereco}}</td>
+			<td>{{u.telefone}}</td>
+			<td>{{u.login}}</td>
+			<td>{{u.senha}}</td>
+			<td>{{u.cpf}}</td>
+			<td>{{u.tipoUsuario}}</td>
+			<td><button class="btn btn-default" (click)="editUsuario(u)">Editar</button></td>
+			<td><button class="btn btn-warning" (click)="deleteUsuario(u)">Excluir</button></td>
 		</tr>
 	</table>
 	
