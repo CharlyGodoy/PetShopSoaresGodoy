@@ -1,0 +1,42 @@
+<div class="container">
+	<h1>Cadastro de Serviços</h1>
+	<form>
+		<div class="form-group">
+			<label for="nome">Nome</label> <input type="text"
+				class="form-control" name="nome" [(ngModel)]="servico.nome" required>
+		</div>
+		<div class="form-group">
+			<label for="nome">Descrição</label> <input type="text"
+				class="form-control" name="descricao" [(ngModel)]="servico.descricao" required>
+		</div>
+		<div class="form-group">
+			<label for="nome">Telefone</label> <input type="text"
+				class="form-control" name="tempoServico" [(ngModel)]="servico.tempoServico" required>
+		</div>
+		<div class="form-group">
+			<label for="nome">Login</label> <input type="text"
+				class="form-control" name="valorServico" [(ngModel)]="servico.valorServico" required>
+		</div>
+				
+		<button class="btn btn-success" (click)="addServico()">Cadastrar</button>
+	</form>
+
+<br/>
+<br/>
+<br/>
+	<p></p>
+	<table class="table">
+		<tr>
+			<th>Nome</th>
+			<th>Descrição</th>
+			<th>Tempo de Serviço</th>
+			<th>Valor do Serviço</th>			
+		</tr>
+		<tr *ngFor="let servico of servicos">
+			<td>{{servico.nome}} </td>
+			<td>{{servico.descricao}}</td>
+			<td>{{servico.tempoServico}}</td>
+			<td>{{servico.valorServico}}</td>					
+		</tr>
+	</table>
+</div>
