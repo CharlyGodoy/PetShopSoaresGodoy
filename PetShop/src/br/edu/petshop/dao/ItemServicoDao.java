@@ -51,4 +51,10 @@ public class ItemServicoDao implements InterfaceDao<ItemServico>{
 		em.close();
 		
 	}
+
+	@Override
+	public ItemServico BuscarPorId(Long t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

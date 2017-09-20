@@ -51,4 +51,10 @@ public class PedidoDao implements InterfaceDao<Pedido>{
 		em.close();
 		
 	}
+
+	@Override
+	public Pedido BuscarPorId(Long t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

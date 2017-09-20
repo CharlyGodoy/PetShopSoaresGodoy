@@ -71,4 +71,76 @@ public class BusinessUsuario {
 		
 		return usuarios;
 	}
+	
+	public void editar (Usuario usuario) throws BusinessException{						
+		if (usuario.getNome() == null || usuario.getNome().equals("")){
+			throw new
+			BusinessException("RN01 - Nome inválido");
+		}
+		
+		if (usuario.getNome() == null || usuario.getNome().equals("")){
+			throw new
+			BusinessException("RN02 - Nome inválido");
+		}
+		
+		if (usuario.getEndereco() == null || usuario.getEndereco().equals("")){
+			throw new
+			BusinessException("RN03 - Endereço inválido");
+		}
+		
+		if (usuario.getTelefone() == null || usuario.getTelefone().equals("")){
+			throw new
+			BusinessException("RN04 - Telefone inválido");
+		}
+		
+		if (usuario.getNome() == null || usuario.getNome().equals("")){
+			throw new
+			BusinessException("RN05 - Nome inválido");
+		}
+		
+		if (usuario.getLogin() == null || usuario.getLogin().equals("")){
+			throw new
+			BusinessException("RN06 - Login inválido.");
+		}
+		
+		if (usuario.getSenha() == null || usuario.getSenha().equals("")){
+			throw new
+			BusinessException("RN07 - Senha inválido.");
+		}
+		
+		if (usuario.getSenha() == null || usuario.getSenha().equals("")){
+			throw new
+			BusinessException("RN08 - Senha inválido.");
+		}
+		
+		if (usuario.getTipoUsuario() == null || usuario.getTipoUsuario() <= 0){
+			throw new
+			BusinessException("RN09 - Tipo usuário inválido.");
+		}
+		
+		if (usuario.getCpf() == null || usuario.getCpf().equals("")){
+			throw new
+			BusinessException("RN10 - CPF inválido.");
+		}
+		
+		InterfaceDao<Usuario> usuarioDao = FactoryDao.createUsuarioDao();//new UsuarioDao();
+		usuarioDao.Editar(usuario);		
+	}
+
+	public void excluir(Usuario usuario) throws BusinessException{
+		if (usuario.getUsuarioId() == null || usuario.getUsuarioId().equals("")){
+			throw new
+			BusinessException("RN01 - ID inválido");
+		}
+		
+		InterfaceDao<Usuario> usuarioDao = FactoryDao.createUsuarioDao();//new UsuarioDao();
+		usuarioDao.Excluir(usuario);
+	}
+
+	public Usuario buscarPorId(Long id) {
+		InterfaceDao<Usuario> usuarioDao = FactoryDao.createUsuarioDao();
+		
+		Usuario usuario = usuarioDao.BuscarPorId(id);
+		return usuario;
+	}
 }

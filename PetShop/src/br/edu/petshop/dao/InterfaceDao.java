@@ -10,5 +10,7 @@ public interface InterfaceDao<T> {
 	
 	public void Editar(T t);
 	
+	public T BuscarPorId(Long t);
+	
 	public void Excluir(T t);
 }

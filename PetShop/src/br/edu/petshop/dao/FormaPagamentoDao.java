@@ -50,4 +50,10 @@ import br.edu.petshop.entity.FormaPagamento;
 		em.close();
 		
 	}
+
+	@Override
+	public FormaPagamento BuscarPorId(Long t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.edu.petshop.entity.ItemServico;
+import br.edu.petshop.entity.Produto;
 import br.edu.petshop.entity.Servico;
 
 public class ServicoDao implements InterfaceDao<Servico>{
@@ -35,9 +36,25 @@ public class ServicoDao implements InterfaceDao<Servico>{
 	}
 
 	@Override
-	public void Editar(Servico t) {
-		// TODO Auto-generated method stub
+	public void Editar(Servico servico) {
+EntityManager em = Conexao.getInstance().createEntityManager();
 		
+		em.getTransaction().begin();
+		em.persist(servico);
+		em.getTransaction().commit();
+		
+		em.close();
+		
+	}
+	
+	@Override
+	public Servico BuscarPorId (Long id) {
+		EntityManager em = Conexao.getInstance().createEntityManager();
+		
+		Servico servico = em.find(Servico.class, id);
+		em.close();
+		
+		return servico;
 	}
 
 	@Override
@@ -51,4 +68,5 @@ public class ServicoDao implements InterfaceDao<Servico>{
 		em.close();
 		
 	}
+
 }

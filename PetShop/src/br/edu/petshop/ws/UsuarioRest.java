@@ -6,6 +6,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -29,9 +30,28 @@ public class UsuarioRest {
 		}
 	}
 	
+	@POST
+	@Path("/excluir")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void excluir(Usuario usuario) {			
+		
+		try {
+			facade.excluirUsuario(usuario);			
+		} catch(BusinessException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public ArrayList<Usuario> listar() {
 		return (ArrayList<Usuario>) facade.listarUsuario();
+	}
+	
+	@GET
+	@Path("{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Usuario buscarPorId(@PathParam("id") Long id) {
+		return (Usuario) facade.buscarUsuarioPorId(id);
 	}
 }

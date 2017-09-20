@@ -34,9 +34,24 @@ public class PetDao implements InterfaceDao<Pet>{
 	}
 
 	@Override
-	public void Editar(Pet t) {
-		// TODO Auto-generated method stub
+	public void Editar(Pet pet) {
+		EntityManager em = Conexao.getInstance().createEntityManager();
 		
+		em.getTransaction().begin();
+		em.persist(pet);
+		em.getTransaction().commit();
+		
+		em.close();
+	}
+	
+	@Override
+	public Pet BuscarPorId (Long id) {
+		EntityManager em = Conexao.getInstance().createEntityManager();
+		
+		Pet pet = em.find(Pet.class, id);
+		em.close();
+		
+		return pet;
 	}
 
 	@Override
@@ -49,4 +64,5 @@ public class PetDao implements InterfaceDao<Pet>{
 		
 		em.close();
 	}
+
 }

@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import br.edu.petshop.entity.ItemServico;
+import br.edu.petshop.entity.Pet;
 import br.edu.petshop.entity.Usuario;
 
 public class UsuarioDao implements InterfaceDao<Usuario>{
@@ -35,9 +36,25 @@ public class UsuarioDao implements InterfaceDao<Usuario>{
 	}
 
 	@Override
-	public void Editar(Usuario t) {
-		// TODO Auto-generated method stub
+	public void Editar(Usuario usuario) {
+		EntityManager em = Conexao.getInstance().createEntityManager();
 		
+		em.getTransaction().begin();
+		em.persist(usuario);
+		em.getTransaction().commit();
+		
+		em.close();
+		
+	}
+	
+	@Override
+	public Usuario BuscarPorId (Long id) {
+		EntityManager em = Conexao.getInstance().createEntityManager();
+		
+		Usuario usuario = em.find(Usuario.class, id);
+		em.close();
+		
+		return usuario;
 	}
 
 	@Override
@@ -51,4 +68,5 @@ public class UsuarioDao implements InterfaceDao<Usuario>{
 		em.close();
 		
 	}
+
 }

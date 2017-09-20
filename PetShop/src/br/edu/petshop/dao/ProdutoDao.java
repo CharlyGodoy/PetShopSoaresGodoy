@@ -7,6 +7,7 @@ import javax.persistence.Query;
 
 import br.edu.petshop.entity.ItemServico;
 import br.edu.petshop.entity.Produto;
+import br.edu.petshop.entity.Usuario;
 
 public class ProdutoDao implements InterfaceDao<Produto>{
 
@@ -35,9 +36,25 @@ public class ProdutoDao implements InterfaceDao<Produto>{
 	}
 
 	@Override
-	public void Editar(Produto t) {
-		// TODO Auto-generated method stub
+	public void Editar(Produto produto) {
+		EntityManager em = Conexao.getInstance().createEntityManager();
 		
+		em.getTransaction().begin();
+		em.persist(produto);
+		em.getTransaction().commit();
+		
+		em.close();
+		
+	}
+	
+	@Override
+	public Produto BuscarPorId (Long id) {
+		EntityManager em = Conexao.getInstance().createEntityManager();
+		
+		Produto produto = em.find(Produto.class, id);
+		em.close();
+		
+		return produto;
 	}
 
 	@Override
@@ -51,4 +68,5 @@ public class ProdutoDao implements InterfaceDao<Produto>{
 		em.close();
 		
 	}
+
 }

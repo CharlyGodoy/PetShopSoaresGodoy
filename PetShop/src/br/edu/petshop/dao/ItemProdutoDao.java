@@ -50,4 +50,10 @@ public class ItemProdutoDao implements InterfaceDao<ItemProduto>{
 		em.close();
 		
 	}
+
+	@Override
+	public ItemProduto BuscarPorId(Long t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
