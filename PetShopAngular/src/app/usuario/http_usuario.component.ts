@@ -33,7 +33,7 @@ export class HttpUsuarioComponent {
   }
 
   editUsuario(usuario: Usuario) {
-    this.usuario.id = usuario.id;
+    this.usuario.usuarioId = usuario.usuarioId;
     this.usuario.nome = usuario.nome;
     this.usuario.endereco = usuario.endereco;
     this.usuario.telefone = usuario.telefone;

@@ -23,15 +23,19 @@ export class HttpUsuarioService {
     const json = JSON.stringify(usuario);
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
+    if (usuario.usuarioId == null) {
+      return this._http.post('http://petshop.jelasticlw.com.br/rest/usuariorest', json, options).map(res => res.json());
+    } else {
     return this._http.post('http://petshop.jelasticlw.com.br/rest/usuariorest',
       json, options).map(res => res.json());
+    }
   }
 
   deleteUsuario(usuario: Usuario): Observable<string> {
     const json = JSON.stringify(usuario);
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
-    return this._http.post('http://petshop.jelasticlw.com.br/rest/usuariorest/excluir?id=' + usuario.id,
+    return this._http.post('http://petshop.jelasticlw.com.br/rest/usuariorest/excluir?id=' + usuario.usuarioId,
       json, options).map(res => res.json());
   }
 }

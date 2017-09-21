@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 
 export class Usuario {
-  public id: number;
+  public usuarioId: number;
   public nome: string;
   public endereco: string;
   public telefone: string;
   public login: string;
   public senha: string;
   public cpf: string;
-  public tipoUsuario: string;
+  public tipoUsuario: number;
 
   constructor() {
   }

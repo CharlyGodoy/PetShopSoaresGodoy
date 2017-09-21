@@ -11,7 +11,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.petshop.business.BusinessException;
-import br.edu.petshop.entity.Pet;
 import br.edu.petshop.entity.Servico;
 import br.edu.petshop.facade.Facade;
 

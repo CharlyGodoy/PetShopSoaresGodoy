@@ -5,7 +5,6 @@ import java.util.List;
 import br.edu.petshop.dao.FactoryDao;
 import br.edu.petshop.dao.InterfaceDao;
 import br.edu.petshop.entity.Produto;
-import br.edu.petshop.entity.Usuario;
 
 public class BusinessProduto {
 	

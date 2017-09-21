@@ -5,8 +5,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import br.edu.petshop.entity.ItemServico;
-import br.edu.petshop.entity.Produto;
 import br.edu.petshop.entity.Servico;
 
 public class ServicoDao implements InterfaceDao<Servico>{

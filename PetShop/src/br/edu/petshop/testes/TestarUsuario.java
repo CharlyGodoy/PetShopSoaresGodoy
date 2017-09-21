@@ -8,9 +8,6 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import br.edu.petshop.business.BusinessException;
-import br.edu.petshop.business.BusinessUsuario;
-import br.edu.petshop.dao.FactoryDao;
-import br.edu.petshop.dao.InterfaceDao;
 import br.edu.petshop.entity.Usuario;
 import br.edu.petshop.facade.Facade;
 
@@ -47,5 +44,15 @@ public class TestarUsuario {
 		List<Usuario> usuarios = facade.listarUsuario();
 		
 		Assert.assertEquals(true, usuarios.size() > 0);	
+	}
+	
+	@Test
+	public void excluirUsuario(Usuario usuario) {
+		
+		try {
+			facade.excluirUsuario(usuario);
+		} catch(BusinessException e) {
+			e.printStackTrace();
+		}
 	}
 }

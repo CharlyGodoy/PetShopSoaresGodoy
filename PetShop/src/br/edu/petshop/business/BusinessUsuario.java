@@ -128,7 +128,7 @@ public class BusinessUsuario {
 	}
 
 	public void excluir(Usuario usuario) throws BusinessException{
-		if (usuario.getUsuarioId() == null || usuario.getUsuarioId().equals("")){
+		if (usuario.getUsuarioId() == null){
 			throw new
 			BusinessException("RN01 - ID inválido");
 		}
