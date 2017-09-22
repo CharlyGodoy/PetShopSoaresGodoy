@@ -37,10 +37,6 @@ public class Facade {
 		businessPet.excluir(pet);
 	}
 	
-	public void editarPet(Pet pet) throws BusinessException{
-		businessPet.editar(pet);
-	}
-	
 	public Pet buscarPetPorId(Long id) {
 		return businessPet.buscarPorId(id);
 	}
@@ -59,10 +55,6 @@ public class Facade {
 	
 	public void excluirUsuario(Usuario usuario) throws BusinessException{
 		businessUsuario.excluir(usuario);
-	}
-	
-	public void editarUsuario(Usuario usuario) throws BusinessException{
-		businessUsuario.editar(usuario);
 	}
 	
 	public Usuario buscarUsuarioPorId(Long id) {
@@ -85,10 +77,6 @@ public class Facade {
 		businessProduto.excluir(produto);
 	}
 	
-	public void editarProduto (Produto produto) throws BusinessException{
-		businessProduto.editar(produto);
-	}
-	
 	public Produto buscarProdutoPorId(Long id) {
 		return businessProduto.buscarPorId(id);
 	}
@@ -106,10 +94,6 @@ public class Facade {
 	
 	public void excluirServico(Servico servico) throws BusinessException{
 		businessServico.excluir(servico);
-	}
-	
-	public void editarServico(Servico servico) throws BusinessException{
-		businessServico.editar(servico);
 	}
 	
 	public Servico buscarServicoPorId(Long id) {

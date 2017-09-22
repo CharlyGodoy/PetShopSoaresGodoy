@@ -38,27 +38,6 @@ public class BusinessProduto {
 		return produtos;
 	}
 
-	public void editar(Produto produto) throws BusinessException {
-		if (produto.getNome() == null || produto.getNome().equals("")) {
-			throw new BusinessException("RN01 - Nome inválido.");
-		}
-		
-		if (produto.getDescricao() == null || produto.getDescricao().equals("")) {
-			throw new BusinessException("RN02 - Descrição inválida.");
-		}
-		
-		if (produto.getEstoqueProduto() == null || produto.getEstoqueProduto() < 0) {
-			throw new BusinessException("RN03 - Estoque de produto inválido");
-		}
-		
-		if (produto.getValorProduto() == null || produto.getValorProduto() < 0) {
-			throw new BusinessException("RN04 - Valor do produto inválido");
-		}
-		
-		InterfaceDao<Produto> produtoDao = FactoryDao.createProdutoDao();
-		produtoDao.Editar(produto);		
-	}
-
 	public void excluir(Produto produto) throws BusinessException{
 		if (produto.getProdutoId() == null || produto.getProdutoId().equals("")){
 			throw new
