@@ -8,8 +8,6 @@ public interface InterfaceDao<T> {
 	
 	public List<T> listar();
 	
-	public void Editar(T t);
-	
 	public T BuscarPorId(Long t);
 	
 	public void Excluir(T t);

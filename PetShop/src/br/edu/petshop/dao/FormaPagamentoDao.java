@@ -34,17 +34,11 @@ import br.edu.petshop.entity.FormaPagamento;
 	}
 
 	@Override
-	public void Editar(FormaPagamento t) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void Excluir(FormaPagamento formaPagamento) {
 		EntityManager em = Conexao.getInstance().createEntityManager();
 		
 		em.getTransaction().begin();
-		em.remove(formaPagamento);
+		em.remove(em.merge(formaPagamento));
 		em.getTransaction().commit();
 		
 		em.close();

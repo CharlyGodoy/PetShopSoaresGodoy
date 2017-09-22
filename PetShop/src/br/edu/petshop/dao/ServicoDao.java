@@ -32,18 +32,6 @@ public class ServicoDao implements InterfaceDao<Servico>{
 		
 		return servicos;
 	}
-
-	@Override
-	public void Editar(Servico servico) {
-EntityManager em = Conexao.getInstance().createEntityManager();
-		
-		em.getTransaction().begin();
-		em.persist(servico);
-		em.getTransaction().commit();
-		
-		em.close();
-		
-	}
 	
 	@Override
 	public Servico BuscarPorId (Long id) {
@@ -60,7 +48,7 @@ EntityManager em = Conexao.getInstance().createEntityManager();
 		EntityManager em = Conexao.getInstance().createEntityManager();
 		
 		em.getTransaction().begin();
-		em.remove(servico);
+		em.remove(em.merge(servico));
 		em.getTransaction().commit();
 		
 		em.close();

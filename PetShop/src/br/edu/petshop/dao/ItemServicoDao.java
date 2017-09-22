@@ -34,17 +34,11 @@ public class ItemServicoDao implements InterfaceDao<ItemServico>{
 	}
 
 	@Override
-	public void Editar(ItemServico t) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void Excluir(ItemServico itemServico) {
 		EntityManager em = Conexao.getInstance().createEntityManager();
 		
 		em.getTransaction().begin();
-		em.remove(itemServico);
+		em.remove(em.merge(itemServico));
 		em.getTransaction().commit();
 		
 		em.close();

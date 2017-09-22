@@ -32,17 +32,6 @@ public class PetDao implements InterfaceDao<Pet>{
 		
 		return pets;
 	}
-
-	@Override
-	public void Editar(Pet pet) {
-		EntityManager em = Conexao.getInstance().createEntityManager();
-		
-		em.getTransaction().begin();
-		em.persist(pet);
-		em.getTransaction().commit();
-		
-		em.close();
-	}
 	
 	@Override
 	public Pet BuscarPorId (Long id) {
@@ -59,7 +48,7 @@ public class PetDao implements InterfaceDao<Pet>{
 		EntityManager em = Conexao.getInstance().createEntityManager();
 		
 		em.getTransaction().begin();
-		em.remove(pet);
+		em.remove(em.merge(pet));
 		em.getTransaction().commit();
 		
 		em.close();

@@ -32,18 +32,6 @@ public class UsuarioDao implements InterfaceDao<Usuario>{
 		
 		return usuarios;
 	}
-
-	@Override
-	public void Editar(Usuario usuario) {
-		EntityManager em = Conexao.getInstance().createEntityManager();
-		
-		em.getTransaction().begin();
-		em.persist(usuario);
-		em.getTransaction().commit();
-		
-		em.close();
-		
-	}
 	
 	@Override
 	public Usuario BuscarPorId (Long id) {
@@ -60,7 +48,7 @@ public class UsuarioDao implements InterfaceDao<Usuario>{
 		EntityManager em = Conexao.getInstance().createEntityManager();
 		
 		em.getTransaction().begin();
-		em.remove(usuario);
+		em.remove(em.merge(usuario));
 		em.getTransaction().commit();
 		
 		em.close();

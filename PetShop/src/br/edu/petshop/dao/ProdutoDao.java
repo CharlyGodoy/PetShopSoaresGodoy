@@ -32,18 +32,6 @@ public class ProdutoDao implements InterfaceDao<Produto>{
 		
 		return produtos;
 	}
-
-	@Override
-	public void Editar(Produto produto) {
-		EntityManager em = Conexao.getInstance().createEntityManager();
-		
-		em.getTransaction().begin();
-		em.persist(produto);
-		em.getTransaction().commit();
-		
-		em.close();
-		
-	}
 	
 	@Override
 	public Produto BuscarPorId (Long id) {
@@ -60,7 +48,7 @@ public class ProdutoDao implements InterfaceDao<Produto>{
 		EntityManager em = Conexao.getInstance().createEntityManager();
 		
 		em.getTransaction().begin();
-		em.remove(produto);
+		em.remove(em.merge(produto));
 		em.getTransaction().commit();
 		
 		em.close();
