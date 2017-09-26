@@ -30,9 +30,11 @@ public class ServicoRest {
 	}
 	
 	@POST
-	@Path("/excluir")
+	@Path("/excluir{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void excluir(Servico servico){
+	public void excluir(@PathParam("id") Long id){
+		Servico servico;
+		servico = facade.buscarServicoPorId(id);
 		try{
 			facade.excluirServico(servico);
 		}catch(BusinessException e){

@@ -31,9 +31,11 @@ public class PetRest {
 	}
 	
 	@POST
-	@Path("/excluir")
+	@Path("/excluir{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void excluir(Pet pet){
+	public void excluir(@PathParam("id") Long id){
+		Pet pet;
+		pet = facade.buscarPetPorId(id);
 		try{
 			facade.excluirPet(pet);
 		}catch(BusinessException e){
