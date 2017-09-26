@@ -11,7 +11,7 @@ export class HttpPetService {
   constructor(private _http: Http) { }
 
   getPet(): Observable<Pet[]> {
-    return this._http.get('http://petshop.jelasticlw.com.br/rest/petrest').
+    return this._http.get('http://petshop2.jelasticlw.com.br/rest/petrest').
       map(this.extractData);
   }
 
@@ -23,7 +23,7 @@ export class HttpPetService {
     const json = JSON.stringify(pet);
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
-    return this._http.post('http://petshop.jelasticlw.com.br/rest/petrest',
+    return this._http.post('http://petshop2.jelasticlw.com.br/rest/petrest',
       json, options).map(res => res.json());
   }
 }

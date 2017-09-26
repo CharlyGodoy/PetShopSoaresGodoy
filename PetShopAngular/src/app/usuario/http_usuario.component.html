@@ -1,6 +1,10 @@
 <div class="container">
 	<h1>Cadastro de Usuario</h1>
 	<form>
+		<div class="form-group" style="display:none;">
+			<label for="usuarioId">usuarioId</label> <input type="text"
+				class="form-control" name="usuarioId" [(ngModel)]="usuario.usuarioId" required>
+		</div>
 		<div class="form-group">
 			<label for="nome">Nome</label> <input type="text"
 				class="form-control" name="nome" [(ngModel)]="usuario.nome" required>
@@ -58,7 +62,7 @@
 			<td>{{usuario.cpf}}</td>
 			<td>{{usuario.tipoUsuario}}</td>
 			<td><button class="btn btn-default" (click)="editUsuario(usuario)">Editar</button></td>
-			<td><button class="btn btn-danger" (click)="deleteUsuario(usuario)">Excluir</button></td>
+			<td><button class="btn btn-danger" (click)="deleteUsuario(usuario.usuarioId)">Excluir</button></td>
 		</tr>			
 	</table>
 	

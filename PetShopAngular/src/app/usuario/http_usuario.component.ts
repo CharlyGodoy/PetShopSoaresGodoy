@@ -43,8 +43,8 @@ export class HttpUsuarioComponent {
     this.usuario.tipoUsuario = usuario.tipoUsuario;
   }
 
-  deleteUsuario() {
-    this.httpUsuarioS.deleteUsuario(this.usuario).subscribe(
+  deleteUsuario(id: number) {
+    this.httpUsuarioS.deleteUsuario(id).subscribe(
       data => data,
       error => alert(error),
       () => this.getUsuario()

@@ -11,7 +11,7 @@ export class HttpUsuarioService {
   constructor(private _http: Http) { }
 
   getUsuario(): Observable<Usuario[]> {
-    return this._http.get('http://petshop.jelasticlw.com.br/rest/usuariorest').
+    return this._http.get('http://petshop2.jelasticlw.com.br/rest/usuariorest').
       map(this.extractData);
   }
 
@@ -24,18 +24,18 @@ export class HttpUsuarioService {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
     if (usuario.usuarioId == null) {
-      return this._http.post('http://petshop.jelasticlw.com.br/rest/usuariorest', json, options).map(res => res.json());
+      return this._http.post('http://petshop2.jelasticlw.com.br/rest/usuariorest', json, options).map(res => res.json());
     } else {
-    return this._http.post('http://petshop.jelasticlw.com.br/rest/usuariorest',
+    return this._http.post('http://petshop2.jelasticlw.com.br/rest/usuariorest',
       json, options).map(res => res.json());
     }
   }
 
-  deleteUsuario(usuario: Usuario): Observable<string> {
-    const json = JSON.stringify(usuario);
+  deleteUsuario(id: number): Observable<string> {
+    const json = JSON.stringify(id);
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
-    return this._http.post('http://petshop.jelasticlw.com.br/rest/usuariorest/excluir?id=' + usuario.usuarioId,
+    return this._http.post('http://petshop2.jelasticlw.com.br/rest/usuariorest/excluir?id=' + id,
       json, options).map(res => res.json());
   }
 }

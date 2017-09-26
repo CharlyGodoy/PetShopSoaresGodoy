@@ -11,7 +11,7 @@ export class HttpServicoService {
   constructor(private _http: Http) { }
 
   getServico(): Observable<Servico[]> {
-    return this._http.get('http://petshop.jelasticlw.com.br/rest/servicorest').
+    return this._http.get('http://petshop2.jelasticlw.com.br/rest/servicorest').
       map(this.extractData);
   }
 
@@ -23,7 +23,7 @@ export class HttpServicoService {
     const json = JSON.stringify(servico);
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
-    return this._http.post('http://petshop.jelasticlw.com.br/rest/servicorest',
+    return this._http.post('http://petshop2.jelasticlw.com.br/rest/servicorest',
       json, options).map(res => res.json());
   }
 }
