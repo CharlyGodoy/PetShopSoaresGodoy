@@ -26,4 +26,12 @@ export class HttpServicoService {
     return this._http.post('http://petshop2.jelasticlw.com.br/rest/servicorest',
       json, options).map(res => res.json());
   }
+
+  deleteServico(id: number): Observable<string> {
+    const json = JSON.stringify(id);
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
+    return this._http.post('http://petshop2.jelasticlw.com.br/rest/servicorest/excluir?id=' + id,
+      json, options).map(res => res.json());
+  }
 }

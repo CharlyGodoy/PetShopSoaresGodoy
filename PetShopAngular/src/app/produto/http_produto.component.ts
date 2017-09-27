@@ -34,5 +34,16 @@ export class HttpProdutoComponent {
 
   }
 
+      editProduto(produto: Produto) {
+    this.produto = produto;
+  }
+
+  deleteProduto(id: number) {
+    this.httpProdutoS.deleteProduto(id).subscribe(
+      data => data,
+      error => alert(error),
+      () => this.getProduto()
+    );
+  }
 
 }

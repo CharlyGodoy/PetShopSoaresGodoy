@@ -34,5 +34,16 @@ export class HttpServicoComponent {
 
   }
 
+    editServico(servico: Servico) {
+    this.servico = servico;
+  }
+
+  deleteServico(id: number) {
+    this.httpServicoS.deleteServico(id).subscribe(
+      data => data,
+      error => alert(error),
+      () => this.getServico()
+    );
+  }
 
 }

@@ -8,6 +8,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.petshop.business.BusinessException;
@@ -31,9 +32,9 @@ public class PetRest {
 	}
 	
 	@POST
-	@Path("/excluir{id}")
+	@Path("/excluir")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void excluir(@PathParam("id") Long id){
+	public void excluir(@QueryParam("id") Long id){
 		Pet pet;
 		pet = facade.buscarPetPorId(id);
 		try{

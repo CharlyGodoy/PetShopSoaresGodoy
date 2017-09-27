@@ -1,6 +1,10 @@
 <div class="container">
 	<h1>Cadastro de Serviços</h1>
 	<form>
+		<div class="form-group" style="display:none;">
+			<label for="servicoId">Id</label> <input type="text"
+				class="form-control" name="servicoId" [(ngModel)]="servico.nome" required>
+		</div>
 		<div class="form-group">
 			<label for="nome">Nome</label> <input type="text"
 				class="form-control" name="nome" [(ngModel)]="servico.nome" required>
@@ -27,16 +31,20 @@
 	<p></p>
 	<table class="table">
 		<tr>
+			<th>Id</th>
 			<th>Nome</th>
 			<th>Descrição</th>
 			<th>Tempo de Serviço</th>
 			<th>Valor do Serviço</th>			
 		</tr>
 		<tr *ngFor="let servico of servicos">
+			<td>{{servico.servicoId}} </td>
 			<td>{{servico.nome}} </td>
 			<td>{{servico.descricao}}</td>
 			<td>{{servico.tempoServico}}</td>
-			<td>{{servico.valorServico}}</td>					
+			<td>{{servico.valorServico}}</td>
+			<td><button class="btn btn-default" (click)="editServico(servico)">Editar</button></td>	
+			<td><button class="btn btn-danger" (click)="deleteServico(servico.servicoId)">Excluir</button></td>						
 		</tr>
 	</table>
 </div>

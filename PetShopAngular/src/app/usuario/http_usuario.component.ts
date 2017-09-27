@@ -33,14 +33,7 @@ export class HttpUsuarioComponent {
   }
 
   editUsuario(usuario: Usuario) {
-    this.usuario.usuarioId = usuario.usuarioId;
-    this.usuario.nome = usuario.nome;
-    this.usuario.endereco = usuario.endereco;
-    this.usuario.telefone = usuario.telefone;
-    this.usuario.login = usuario.login;
-    this.usuario.senha = usuario.senha;
-    this.usuario.cpf = usuario.cpf;
-    this.usuario.tipoUsuario = usuario.tipoUsuario;
+    this.usuario = usuario;
   }
 
   deleteUsuario(id: number) {
